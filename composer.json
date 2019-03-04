@@ -1,0 +1,23 @@
+{
+    "name": "kriss/foxy-yii2-convert",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kriss",
+            "email": "462679766@qq.com"
+        }
+    ],
+    "require": {
+        "composer-plugin-api": "^1.1",
+        "foxy/foxy": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kriss\\foxyYii2Covert\\" : "src"
+        }
+    },
+    "extra": {
+        "class": "kriss\\foxyYii2Covert\\Plugin"
+    }
+}
