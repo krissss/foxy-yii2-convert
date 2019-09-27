@@ -57,7 +57,7 @@ A: Like [almasaeed2010/adminlte](https://github.com/almasaeed2010/adminlte), it 
       "manager": "yarn",
       "enable-packages": {
         "almasaeed2010/adminlte": false, // this tip
-        "*": true // this must be add in last
+        "*": true // must be added to the last
       }
     }
   },
@@ -74,7 +74,7 @@ A: Like [kartik-v/dependent-dropdown](https://github.com/kartik-v/dependent-drop
       "manager": "yarn",
       "enable-packages": {
         "kartik-v/dependent-dropdown": false, // this tip
-        "*": true // this must be add in last
+        "*": true // must be added to the last
       }
     }
   },
@@ -82,4 +82,4 @@ A: Like [kartik-v/dependent-dropdown](https://github.com/kartik-v/dependent-drop
 
 > Q: If one package is dont have same npm package name in bower?
 
-A: Tell me with a issue.
+A: Tell me with an issue.
