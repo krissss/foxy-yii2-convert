@@ -50,7 +50,7 @@ like this
 
 A: Like [almasaeed2010/adminlte](https://github.com/almasaeed2010/adminlte), it can be installed by composer, you can config this in composer.json like:
 
-```json
+```bash
   "config": {
     "foxy": {
       "enabled": true,
@@ -67,7 +67,7 @@ A: Like [almasaeed2010/adminlte](https://github.com/almasaeed2010/adminlte), it 
 
 A: Like [kartik-v/dependent-dropdown](https://github.com/kartik-v/dependent-dropdown), you can config this in composer.json like:
 
-```json
+```bash
   "config": {
     "foxy": {
       "enabled": true,
