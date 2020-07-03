@@ -10,8 +10,6 @@ composer require kriss/foxy-yii2-convert -vvv
 
 # usage
 
-[中文](README_CN.md)
-
 1. add `provide` to `composer.json` to skip install `npm-asset` or `bower-asset`
 
 like this:
@@ -84,4 +82,4 @@ A: Like [kartik-v/dependent-dropdown](https://github.com/kartik-v/dependent-drop
 
 > Q: If one package is dont have same npm package name in bower?
 
-A: Tell me with an issue.
+A: see [Issue: Not macthed asset in bower and npm](https://github.com/krissss/foxy-yii2-convert/issues/3)

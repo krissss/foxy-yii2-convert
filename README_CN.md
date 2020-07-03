@@ -84,4 +84,4 @@ A: 像 [kartik-v/dependent-dropdown](https://github.com/kartik-v/dependent-dropd
 
 > Q: 如果一个包在 npm 中和 brower 中非一致的名字?
 
-A: 请通过 issue 告诉我.
+A: 看这 [Issue: Not macthed asset in bower and npm](https://github.com/krissss/foxy-yii2-convert/issues/3)
