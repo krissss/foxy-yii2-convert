@@ -18,6 +18,13 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     protected $composer;
     protected $io;
 
+    /**
+     * The default values of config.
+     */
+    private $defaultConfig = array(
+        'target-map' => [],
+    );
+
     public function activate(Composer $composer, IOInterface $io)
     {
         $this->composer = $composer;
@@ -51,6 +58,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
             foreach ($package->getRequires() as $require) {
                 $target = $require->getTarget();
                 if (strpos($target, 'npm-asset') !== false || strpos($target, 'bower-asset') !== false) {
+                    $target = $this->transTargetFromConfig($target);
                     $dependence = explode('/', $target)[1];
                     $constraint = $this->transConstraintComposer2Npm($require->getPrettyConstraint());
                     $packageDependencies[$dependence] = $constraint;
@@ -71,6 +79,36 @@ class Plugin implements PluginInterface, EventSubscriberInterface
                 $event->addAsset($packageName, $fs->findShortestPath(getcwd(), $newFilename));
             }
         }
+    }
+
+    private $_packageConfig = false;
+
+    /**
+     * get composer.json > config > foxy-yii2-convert
+     * @return array
+     */
+    protected function getPackageConfig()
+    {
+        if ($this->_packageConfig !== false) {
+            return $this->_packageConfig;
+        }
+        $packageConfig = $this->composer->getPackage()->getConfig();
+        $packageConfig = isset($packageConfig['foxy-yii2-convert']) && \is_array($packageConfig['foxy-yii2-convert'])
+            ? $packageConfig['foxy-yii2-convert']
+            : array();
+        $this->_packageConfig = array_merge($this->defaultConfig, $packageConfig);
+        return $this->_packageConfig;
+    }
+
+    /**
+     * cover target to another which is in config
+     * @param $target
+     * @return string
+     */
+    protected function transTargetFromConfig($target)
+    {
+        $targetMap = $this->getPackageConfig()['target-map'];
+        return isset($targetMap[$target]) ? $targetMap[$target] : $target;
     }
 
     /**
