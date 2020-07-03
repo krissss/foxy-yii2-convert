@@ -10,6 +10,8 @@ composer require kriss/foxy-yii2-convert -vvv
 
 # usage
 
+[中文](README_CN.md)
+
 1. add `provide` to `composer.json` to skip install `npm-asset` or `bower-asset`
 
 like this:
