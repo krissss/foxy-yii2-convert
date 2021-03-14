@@ -81,6 +81,8 @@ class Plugin implements PluginInterface, EventSubscriberInterface
 
                 $jsonFile = new JsonFile($newFilename);
                 $packageValue = AssetUtil::formatPackage($package, $packageName, (array)$jsonFile->read());
+                // dev-xxx is not support for package.json
+                $packageValue['version'] = preg_replace('/(dev-[a-z0-9]*)\.?/i', '999.', $packageValue['version']);
                 $jsonFile->write($packageValue);
 
                 // addAsset
