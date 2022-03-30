@@ -15,7 +15,7 @@
         "foxy/foxy": "^1.0"
     },
     "require-dev": {
-        "composer/composer": "^1.5.0|^2.0.0"
+        "composer/composer": "^1.10|^2.2"
     },
     "autoload": {
         "psr-4": {
@@ -24,5 +24,10 @@
     },
     "extra": {
         "class": "kriss\\foxyYii2Covert\\Plugin"
+    },
+    "config": {
+        "allow-plugins": {
+            "foxy/foxy": true
+        }
     }
 }
